@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1530620962 source:/home/policarpo/Downloads/Aula11/ArvBinBusca.cpp
+	<iostream>
+	"ArvBinBusca.h"
+
+1530619915 /home/policarpo/Downloads/Aula11/ArvBinBusca.h
+	"NoArv.h"
+
+1530235697 /home/policarpo/Downloads/Aula11/NoArv.h
+
+1530620310 source:/home/policarpo/Downloads/Aula11/main.cpp
+	<iostream>
+	"ArvBinBusca.h"
+
+1530620310 source:/home/policarpo/Downloads/Aula11/ArvoreBinariaDeBusca/main.cpp
+	<iostream>
+	"ArvBinBusca.h"
+
+1530619915 /home/policarpo/Downloads/Aula11/ArvoreBinariaDeBusca/ArvBinBusca.h
+	"NoArv.h"
+
+1530235697 /home/policarpo/Downloads/Aula11/ArvoreBinariaDeBusca/NoArv.h
+
