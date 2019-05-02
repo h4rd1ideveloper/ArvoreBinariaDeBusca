@@ -27,10 +27,15 @@ NoArv* ArvBinBusca::auxInsere(NoArv *p, int val)
         p->setEsq(NULL);
         p->setDir(NULL);
     }
-    else if(val < p->getInfo())
+    else if(val < p->getInfo()){
         p->setEsq(auxInsere(p->getEsq(), val));
+        p = balanceia(p);
+        }
     else
+    {
         p->setDir(auxInsere(p->getDir(), val));
+        p = balanceia(p);
+}
     return p;
 }
 
@@ -288,4 +293,56 @@ void ArvBinBusca::auxContaImparesFilhos1(NoArv *p, int *nI, int *nF)
         auxContaImparesFilhos1(p->getEsq(), nI, nF);
         auxContaImparesFilhos1(p->getDir(), nI, nF);
     }
+}
+
+NoArv* ArvBinBusca::rotacaoEsquerda(NoArv *arv) {
+NoArv *tmp = arv->getDir();
+arv->setDir(tmp->getEsq());
+tmp->setEsq(arv);
+return tmp;
+}
+
+NoArv* ArvBinBusca::rotacaoDireita(NoArv *arv) {
+NoArv *tmp = arv->getEsq();
+arv->setEsq( tmp->getDir());
+tmp->setDir(arv);
+return tmp;
+}
+int ArvBinBusca::height(NoArv *h) {
+
+    int u, v;
+    if (h == NULL) return -1;
+    u = height(h->getEsq());
+    v = height(h->getDir());
+    return (u > v)?u+1:v+1;
+}
+//2 dir 1 == simples rota esq
+// or -1 rotação dupla rotaciona dir to dir e no rota to left
+
+int ArvBinBusca::fat_bal(NoArv* arv) {
+return (height(arv->getDir()) - height(arv->getEsq()));
+}
+NoArv* ArvBinBusca::balanceia(NoArv *p){
+
+    int fator = fat_bal(p);
+    if(fator == 2){
+        if(fat_bal(p->getDir()) == 1){
+            p =rotacaoEsquerda(p);
+        }
+        else if(fat_bal(p->getDir()) == -1){
+           p->setDir(rotacaoDireita(p->getDir()) );
+           p = ( rotacaoEsquerda(p) );
+        }
+    }
+    else if(fator == -2){
+        if(fat_bal(p->getEsq()) == -1){
+            p = rotacaoDireita(p);
+        }
+        else if(fat_bal(p->getEsq()) == 1){
+            p->setEsq(rotacaoEsquerda(p->getEsq()));
+           p = rotacaoDireita(p);
+        }
+    }
+    return p;
+
 }

@@ -21,3 +21,16 @@
 
 1530235697 /home/policarpo/Downloads/Aula11/ArvoreBinariaDeBusca/NoArv.h
 
+1556839919 source:/ice/Downloads/ArvoreBinariaDeBusca-master/ArvBinBusca.cpp
+	<iostream>
+	"ArvBinBusca.h"
+
+1556839605 /ice/Downloads/ArvoreBinariaDeBusca-master/ArvBinBusca.h
+	"NoArv.h"
+
+1530699832 /ice/Downloads/ArvoreBinariaDeBusca-master/NoArv.h
+
+1556839734 source:/ice/Downloads/ArvoreBinariaDeBusca-master/main.cpp
+	<iostream>
+	"ArvBinBusca.h"
+

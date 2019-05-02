@@ -23,6 +23,11 @@ public:
     void contaImparesFilhos1(int *nI, int *nF);
 
 private:
+NoArv* balanceia(NoArv *p);
+    NoArv* rotacaoEsquerda(NoArv *arv);
+    NoArv* rotacaoDireita(NoArv *arv);
+    int fat_bal(NoArv* arv);
+    int height(NoArv *h);
     void auxContaImparesFilhos1(NoArv *p, int *nI, int *nF);
     int auxSomaDoNivel(NoArv *p, int x);
     NoArv* maiorSubArvEsq(NoArv *p);
